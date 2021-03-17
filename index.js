@@ -46,7 +46,7 @@ class MyPromise {
             try {
                 const handlerReturn = registeredFn(v);
                 if (handlerReturn instanceof MyPromise) {
-                    handlerReturn.then(nextPromiseResolve);
+                    handlerReturn.then(nextPromiseResolve, nextPromiseReject);
                 } else {
                     nextPromiseResolve(handlerReturn);
                 }
